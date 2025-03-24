@@ -1,0 +1,69 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<div id="parent">
+    <button class="btn">Button 1</button>
+    <button class="btn">Button 2</button>
+</div>
+<button id="addButton">Add New Button</button> This button adds new buttons 
+<div id="parent">
+    <button class="btn">Button 1</button>
+    <button class="btn">Button 2</button>
+</div>
+
+<script>
+document.getElementById("parent").addEventListener("click", function(event) {
+    if (event.target.classList.contains("btn")) {
+        console.log("Button clicked:", event.target.textContent);
+    }
+});
+document.getElementById("addButton").addEventListener("click", function() {
+    const newButton = document.createElement("button");
+    newButton.className = "btn";
+    newButton.textContent = "New Button";
+    document.getElementById("parent").appendChild(newButton);
+});
+
+</script>
+
+</body>
+</html> --->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="post-container">
+        <div class="post">post1</div>
+        <div class="post">post2</div>
+    </div>
+    <button id="load-more">Load more</button>
+    <script>
+document.getElementById("post-container").addEventListener('click',(event)=>{
+  if(event.target&&event.target.classList.contains('post'))
+  {
+    console.log(`clicked on:${event.target.textContent}`)
+  }
+
+})
+document.getElementById("load-more").addEventListener('click',()=>{
+    const newitem=document.createElement('div')
+    newitem.className='post'
+    newitem.textContent='iam post3'
+    document.getElementById('post-container').appendChild(newitem)
+})
+
+
+    </script>
+    
+</body>
+</html>

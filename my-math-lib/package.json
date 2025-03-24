@@ -1,0 +1,10 @@
+{
+  "name": "my-math-lib",
+  "version": "2.1.0",
+  "description": "A simple math utility library",
+  "main": "my-math-lib.js",
+  "type": "module",
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

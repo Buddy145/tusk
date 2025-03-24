@@ -1,0 +1,85 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #outerdiv{
+            border: 10px solid purple;
+            padding: 10px;
+            width: 0 auto;
+            text-align: center;
+            margin: 10px;
+        }
+        #middiv{
+            border: 10px solid red;
+            padding: 10px;
+            width: 0 auto;
+            text-align: center;
+            margin: 10px;
+        }
+        #innerdiv{
+            border: 10px solid pink;
+            padding: 10px;
+            width: 0 auto;
+            text-align: center;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="outerdiv">outerdiv
+        <div id="middiv">middiv
+        <div id="innerdiv">innerdiv
+
+        </div>
+    </div>
+    </div>
+
+    <script>
+        document.getElementById("outerdiv").addEventListener("click",()=>{
+         console.log("outer div has been clicked");
+        },false)
+        document.getElementById("middiv").addEventListener("click",()=>{
+            console.log("middiv has been clicked");
+        },false)
+        document.getElementById("innerdiv").addEventListener("click",()=>{
+            console.log("innerdiv has been clicked");
+        },false)
+    </script>
+</body>
+</html> -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Event Bubbling vs Capturing</title>
+</head>
+<body>
+    <div id="parent" style="padding: 30px; background-color: lightblue;">
+        Parent
+        <div id="child" style="padding: 20px; background-color: lightgreen;">
+            Child
+            <button id="btn" style="padding: 10px;">Click Me</button>
+        </div>
+    </div>
+
+    <script>
+        // Parent Element
+        document.getElementById('parent').addEventListener('click', function() {
+            console.log('Parent Clicked!');
+        }, true); // `false` = Bubbling Phase
+
+        // Child Element
+        document.getElementById('child').addEventListener('click', function() {
+            console.log('Child Clicked!');
+        }, true); // `true` = Capturing Phase
+
+        // Button Element
+        document.getElementById('btn').addEventListener('click', function(event) {
+            console.log('Button Clicked!');
+        },true);
+    </script>
+</body>
+</html>
